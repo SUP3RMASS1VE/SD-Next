@@ -15,9 +15,9 @@ module.exports = {
       params: {
         uri: "torch.js",
         params: {
-          venv: "env",                // Edit this to customize the venv folder path
           path: "app",                // Edit this to customize the path to start the shell from
-          // xformers: true   // uncomment this line if your project requires xformers
+          venv: "env",                // Edit this to customize the venv folder path
+           
         }
       }
     },
@@ -25,10 +25,12 @@ module.exports = {
       method: "shell.run",
       params: {
         path: "app",                // Edit this to customize the path to start the shell from
-        message: [
-          "pip install gradio devicetorch",
-          "{{os.platform() === 'win32' ? 'echo 1 | webui.bat' : 'bash webui.sh --debug'}}"
-        ]
+        message: "{{platform === 'win32' ? 'webui.bat --debug' : 'bash webui.sh --debug'}}",
+        env: {
+          SD_WEBUI_RESTARTING: 1,
+        },
+        path: "app",
+        on: [{ "event": "/http:\/\/[0-9.:]+/", "done": true }]
       }
     },
     {
@@ -62,11 +64,6 @@ module.exports = {
         ]
       }
     },
-    {
-      method: "fs.link",
-      params: {
-        venv: "app/env"
-      }
-    },
   ]
 }
+
