@@ -1,8 +1,8 @@
 const path = require('path')
 module.exports = {
   version: "3.7",
-  title: "sdnext",
-  description: "",
+  title: "SD-Next",
+  description: "SD.Next: All-in-one WebUI for AI generative image and video creation",
   icon: "icon.png",
   menu: async (kernel, info) => {
     let installed = info.exists("app/env")
