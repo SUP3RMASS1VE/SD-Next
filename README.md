@@ -1,4 +1,4 @@
-# SD-implementation-with-advanced-features
+# sdnext
 
-A pinokio script for https://github.com/vladmandic/automatic
+A pinokio script for https://github.com/vladmandic/sdnext
 
