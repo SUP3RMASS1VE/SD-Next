@@ -8,7 +8,7 @@ module.exports = {
         env: { },                   // Edit this to customize environment variables (see documentation)
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
-          "python launch.py",    // Edit with your custom commands
+          "python launch.py --skip-torch --use-cuda",    // Edit with your custom commands
         ],
         on: [{
           // The regular expression pattern to monitor.
