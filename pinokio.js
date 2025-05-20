@@ -5,7 +5,7 @@ module.exports = {
   description: "Stable Diffusion implementation with advanced features",
   icon: "icon.png",
   menu: async (kernel, info) => {
-    let installed = info.exists("app/env")
+    let installed = info.exists("app/venv")
     let running = {
       install: info.running("install.js"),
       start: info.running("start.js"),
